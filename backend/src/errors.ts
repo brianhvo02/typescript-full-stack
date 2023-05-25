@@ -6,6 +6,14 @@ export class ServerError extends Error {
     }
 }
 
+export class NotFound extends ServerError {
+    statusCode = 404;
+
+    constructor(msg = 'Not found') {
+        super(msg);
+    }
+}
+
 export class UnprocessableEntity extends ServerError {
     statusCode = 422;
 

@@ -3,9 +3,9 @@ import { UnprocessableEntity } from '../errors';
 
 const TestRouter = Router();
 
-TestRouter.get('/', (req: Request<{ test: boolean }>, res, next) => {
+TestRouter.post('/', (req: Request<{ test: boolean }>, res, next) => {
     try {
-        const { test } = req.params;
+        const { test } = req.body;
 
         if (test) {
             res.json({

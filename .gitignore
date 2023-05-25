@@ -129,5 +129,7 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+build
+
 frontend/public/*
 !frontend/public/index.html

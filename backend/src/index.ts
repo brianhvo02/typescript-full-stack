@@ -11,6 +11,10 @@ app.use(bodyParser.json());
 
 app.use('/api/test', TestRouter);
 
+app.use('/api/*', (req, res) => {
+    res.status(404).json({ error: `${req.method} ${req.baseUrl} is not a valid path` });
+})
+
 app.use('/static', express.static(join(__dirname, '../../frontend/build/static')));
 
 app.get('*', (req, res) => {
